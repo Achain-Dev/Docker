@@ -11,7 +11,7 @@ One of the quickest ways to get Achain up and running on your machine is by usin
 
 ```
 docker run --name achain-node -p MachineIp:18888:18888 \
-           -it imageName \
+           --restart=always -it imageName \
            --rpcuser username --rpcpassword password --httpdendpoint 0.0.0.0:18888 --server
 ```
 
@@ -19,6 +19,6 @@ For example
 
 ```
 docker run --name achain-node -p 10.23.1.198:18888:18888 \
-           -it achain-wallet \
+           --restart=always -it achain-wallet \
            --rpcuser admin --rpcpassword admin --httpdendpoint 0.0.0.0:18888 --server
 ```
