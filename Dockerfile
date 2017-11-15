@@ -1,11 +1,11 @@
 # Set the base image to Ubuntu
 FROM ubuntu:16.04
 
-ADD Achain /data/
+ADD Achain /root/data/
 
-RUN chmod +x /data/Achain
+RUN chmod +x /root/data/Achain
 
-ENTRYPOINT ["/data/Achain"]
+ENTRYPOINT ["/root/data/Achain"]
 
 #port
 EXPOSE 18888
