@@ -8,7 +8,7 @@ RUN chmod +x /root/data/Achain
 ENTRYPOINT ["/root/data/Achain"]
 
 #port
-EXPOSE 18888
+#EXPOSE 18888
 
 
 
