@@ -8,16 +8,21 @@ docker build -t [user]/<imagename>:[tag] .
 ```
 <br><br>
 
-### Start Container
+### Default Value:
 
-- default rpcuser:  admin
-- default rpcpassword:  adminpassword
-- httpendpoint:  8299
-- data dir:  /data/achain
+| key | value |
+ -- | -- 
+ rpcuser | admin 
+ rpcpassword | adminpassword 
+ httpendpoint | 8299 
+ data-dir | /data/achain/data 
+ wallet-dir | /data/achain/wallet 
 
-you can specify RPC_USER RPC_PASSWORD Environment variables to reset rpcuser and rpcpassword.
+<br>
 
-start a container:
+you can specify **RPC_USER**  **RPC_PASSWORD** Environment variables to reset **<u>rpcuser</u>** and **<u>rpcpassword</u>**.
+
+### Start a Container:
 
 ```sh
 docker volume create achain-wallet
