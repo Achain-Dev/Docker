@@ -6,7 +6,7 @@ git clone https://github.com/Tiantiandas/Docker.git
 cd Docker
 docker build -t [user]/<imagename>:[tag] .
 ```
-<br><br>
+<br>
 
 ### Default Value:
 
@@ -21,6 +21,7 @@ docker build -t [user]/<imagename>:[tag] .
 <br>
 
 you can specify **RPC_USER**  **RPC_PASSWORD** Environment variables to reset **<u>rpcuser</u>** and **<u>rpcpassword</u>**.
+<br>
 
 ### Start a Container:
 
