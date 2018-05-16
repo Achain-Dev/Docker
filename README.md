@@ -1,29 +1,31 @@
-#### Docker quick start
+### Create Docker Image
+<br>
 
-* git clone https://github.com/Achain-Dev/Docker.git
-
-* cd Docker
-
-*  docker build -t imageName .
-
-
-One of the quickest ways to get Achain up and running on your machine is by using Docker:
-
+```sh
+git clone https://github.com/Tiantiandas/Docker.git
+cd Docker
+docker build -t [user]/<imagename>:[tag] .
 ```
-docker run -d --name achain-node -p 18888:18888 \
-           --restart=always -it imageName \
-           --rpcuser username --rpcpassword password --httpdendpoint 0.0.0.0:18888 --server
+<br><br>
+
+### Start Container
+
+- default rpcuser:  admin
+- default rpcpassword:  adminpassword
+- httpendpoint:  8299
+- data dir:  /data/achain
+
+you can specify RPC_USER RPC_PASSWORD Environment variables to reset rpcuser and rpcpassword.
+
+start a container:
+
+```sh
+docker volume create achain-wallet
+
+docker run -d -p 8299:8299 -v achain-wallet:/data/achain -e RPC_USER=<USER> -e RPC_NAME=<NAME> <IMAGE>
 ```
+<br>
 
-For example
+### DockerHub
 
-```
-docker run -d --name achain-node -p 18888:18888 \
-           --restart=always -it achain-wallet \
-           --rpcuser admin --rpcpassword admin --httpdendpoint 0.0.0.0:18888 --server
-                     
-```
-
-
-
-
+**docker pull zhegao/achain-wallet**
