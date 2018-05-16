@@ -1,15 +1,15 @@
-# Set the base image to Ubuntu
 FROM ubuntu:16.04
 
-ADD Achain /root/data/
+ARG http_port=8299
+ENV RPC_USER=admin RPC_PASSWORD=adminpassword
 
-RUN chmod +x /root/data/Achain
+COPY Achain /usr/local/achain/
 
-ENTRYPOINT ["/root/data/Achain"]
+COPY achain-start.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/achain-start.sh
 
-#port
-#EXPOSE 18888
+ENTRYPOINT ["achain-start.sh"]
+VOLUME /data/achain
+CMD tail -f /dev/null
 
-
-
-
+EXPOSE ${http_port}
